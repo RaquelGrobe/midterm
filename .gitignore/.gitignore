@@ -1,0 +1,62 @@
+package com.company;
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+public static int MAXDATA = 30;
+public static int INVALID = -1;
+
+    
+
+    public static void main(String[] args) {
+        int count = 0;
+        int Data[] = new int[MAXDATA];
+//creating a scanner and opening a file to read
+        String userInputFileName;
+        System.out.println("\nPlease type in the INPUT file name\n");
+
+        Scanner scanSystemIn = new Scanner(System.in, "UTF-8");
+
+        // Use the Scanner "userFileName" to get the "next" input from "System.in"
+        userInputFileName = scanSystemIn.next();
+
+
+        try {
+            boolean fileDone = false;
+            
+            File userFile = new File(userInputFileName);
+            Scanner scanUserFile = new Scanner(userFile, "UTF-8");
+            
+            while (!fileDone) {
+                if (scanUserFile.hasNext()){
+                    Data[count] = scanUserFile.nextInt();
+                    count++;
+                }
+            }
+
+
+        }
+        catch (FileNotFoundException e) {
+            System.err.format("File Not Found Exception: %s%n", e);
+            e.printStackTrace();
+
+        }
+
+
+    }
+    
+    //for/while loops
+    //INCREASING BY 1 ---> for (int i = 0; i =< somevariable; i++) {}
+    //DECREASING BY 1 ---> for (int i = 0; i =< somevariable; i--) {}
+    //INCREASING BY OTHER THAN 1 (i.e. 3) ---> for (int i = 0; i =< somevariable; i += 3) {}
+    //WHILE --->  while ( !fileDone){
+    // what I want the loop to execute
+    // might need to end by making the conditions either true or false, might need to make it i++ or i--}
+
+
+
+
+
+}
